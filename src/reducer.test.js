@@ -66,6 +66,18 @@ test('bad is incremented', () => {
 
     })
 
+    test('scores are reset', () => {
+      const action = {
+        type: 'ZERO'
+      }
+      const state = initialState
+
+      deepFreeze(state)
+      const newState = counterReducer(state, action)
+      expect(newState).toEqual(initialState)
+
+    })
+
   })
 
  
